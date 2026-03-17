@@ -13,12 +13,12 @@
 
 def fibonacci_2(n):
     a,b = 0,1
-    print(a,b,sep='\n')
+    # print(a,b,sep='\n')
     for i in range(n):
+        print(a)
         current = a+b
         a = b
         b = current
-        print(current)
 
 
 fibonacci_2(10)
