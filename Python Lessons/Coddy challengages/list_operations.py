@@ -133,23 +133,23 @@ import math
 
 def insertion_sort_list(provided_list):
     n = len(provided_list)
-    final_list = []
-    min_number = provided_list[0]
     for i in range(n):
-        for j in range(i,n):
-            if provided_list[i] < min_number:
-                    min_number = provided_list[i]
-            final_list.insert(i, min_number)
-    return final_list
+        min_value = provided_list[i]
+        for j in range(n):
+            if min_value < provided_list[j]:
+                provided_list.pop(i)
+                provided_list.insert(j, min_value)
+                break
+    return provided_list
 
 print(insertion_sort_list([42, 7, 19, 102, 33, 8, 54]))
-# print(insertion_sort_list([3,1,5,2]))
-# print(insertion_sort_list([9, 3, 1, 4, 1, 5, 9, 2, 6, 5]))
-# print(insertion_sort_list([1002, 543, 21, 99, 8, 765]))
-# print(insertion_sort_list([0, -15, 22, -3, 40, -100, 5]))
-# print(insertion_sort_list([12, 12, 11, 13, 5, 6, 7]))
-# print(insertion_sort_list([88, 24, 65, 13, 91, 47, 2, 36]))
-# print(insertion_sort_list([10, 20, 30, 40, 50]))
-# print(insertion_sort_list([5, 4, 3, 2, 1]))
-# print(insertion_sort_list([999, 111, 444, 222, 888, 333]))
-# print(insertion_sort_list([7, 14, 21, 28, 35, 42, 49]))
+print(insertion_sort_list([3,1,5,2]))
+print(insertion_sort_list([9, 3, 1, 4, 1, 5, 9, 2, 6, 5]))
+print(insertion_sort_list([1002, 543, 21, 99, 8, 765]))
+print(insertion_sort_list([0, -15, 22, -3, 40, -100, 5]))
+print(insertion_sort_list([12, 12, 11, 13, 5, 6, 7]))
+print(insertion_sort_list([88, 24, 65, 13, 91, 47, 2, 36]))
+print(insertion_sort_list([10, 20, 30, 40, 50]))
+print(insertion_sort_list([5, 4, 3, 2, 1]))
+print(insertion_sort_list([999, 111, 444, 222, 888, 333]))
+print(insertion_sort_list([7, 14, 21, 28, 35, 42, 49]))
