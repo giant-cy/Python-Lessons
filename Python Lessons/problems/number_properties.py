@@ -13,7 +13,7 @@ is_prime(17)
 
 # 8.
 def primes(number):
-    primes_list = []
+    primes_list = [].sort()
     for i in range(2, number + 1):
         checker = int(i ** 0.5)
         for j in range(2, checker + 1):
