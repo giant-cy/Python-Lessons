@@ -131,25 +131,69 @@ import math
 # print(find_min([999, 111, 444, 222, 888, 333]))
 # print(find_min([7, 14, 21, 28, 35, 42, 49]))
 
-def insertion_sort_list(provided_list):
-    n = len(provided_list)
-    for i in range(n):
-        min_value = provided_list[i]
-        for j in range(n):
-            if min_value < provided_list[j]:
-                provided_list.pop(i)
-                provided_list.insert(j, min_value)
-                break
-    return provided_list
+# def selection_sort_list(provided_list):
+#     n = len(provided_list)
+#     for i in range(n):
+#         min_value = provided_list[i]
+#         for j in range(n):
+#             if min_value < provided_list[j]:
+#                 provided_list.pop(i)
+#                 provided_list.insert(j, min_value)
+#                 break
+#         print(provided_list)
+#     return provided_list
 
-print(insertion_sort_list([42, 7, 19, 102, 33, 8, 54]))
-print(insertion_sort_list([3,1,5,2]))
-print(insertion_sort_list([9, 3, 1, 4, 1, 5, 9, 2, 6, 5]))
-print(insertion_sort_list([1002, 543, 21, 99, 8, 765]))
-print(insertion_sort_list([0, -15, 22, -3, 40, -100, 5]))
-print(insertion_sort_list([12, 12, 11, 13, 5, 6, 7]))
-print(insertion_sort_list([88, 24, 65, 13, 91, 47, 2, 36]))
-print(insertion_sort_list([10, 20, 30, 40, 50]))
-print(insertion_sort_list([5, 4, 3, 2, 1]))
-print(insertion_sort_list([999, 111, 444, 222, 888, 333]))
-print(insertion_sort_list([7, 14, 21, 28, 35, 42, 49]))
+
+
+# def selection_sort_list(provided_list):
+#     n = len(provided_list)
+#     for i in range(n-1):
+#         min_value = provided_list[i]
+#         min_value_index = i
+#         for j in range(i+1, n):
+#             if min_value > provided_list[j]:
+#                 min_value = provided_list[j]
+#                 min_value_index = j
+#         provided_list.pop(min_value_index)
+#         provided_list.insert(i, min_value)
+#     return provided_list
+#
+# print(selection_sort_list([42, 7, 19, 102, 33, 8, 54]))
+# print(selection_sort_list([3,1,5,2]))
+# print(selection_sort_list([9, 3, 1, 4, 1, 5, 9, 2, 6, 5]))
+# print(selection_sort_list([1002, 543, 21, 99, 8, 765]))
+# print(selection_sort_list([0, -15, 22, -3, 40, -100, 5]))
+# print(selection_sort_list([12, 12, 11, 13, 5, 6, 7]))
+# print(selection_sort_list([88, 24, 65, 13, 91, 47, 2, 36]))
+# print(selection_sort_list([10, 20, 30, 40, 50]))
+# print(selection_sort_list([5, 4, 3, 2, 1]))
+# print(selection_sort_list([999, 111, 444, 222, 888, 333]))
+# print(selection_sort_list([7, 14, 21, 28, 35, 42, 49]))
+
+
+
+# def find_indices(numbers, sum):
+#     n = len(numbers)
+#     for i in range(n):
+#         for j in range(i+1, n):
+#             print(i, j)
+#             if numbers[i]+numbers[j] == sum:
+#                 return i,j
+#     return "NO NUMBERS"
+#
+#
+# # print(find_indices([2, 9, 11, 15], 24))
+# print(find_indices([12, 5, 7], 17))
+# # → [0, 1])
+
+
+def max_sliding_window(numbers, window):
+    result = []
+    for i in range(len(numbers) - window + 1):
+        result.append(numbers[i])
+    return result
+
+# Given a list of integers and a window size k, return a list of the maximum value in each sliding window.
+print(max_sliding_window([1], 1))     # → [1]
+print(max_sliding_window([9,8,7,6,8,4,6], 3))  # → [9,8,7,6,8]
+print(max_sliding_window([1,1,1,1], 2))  # → [1,1,1]
