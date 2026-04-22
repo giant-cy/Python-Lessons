@@ -185,15 +185,64 @@ import math
 # # print(find_indices([2, 9, 11, 15], 24))
 # print(find_indices([12, 5, 7], 17))
 # # → [0, 1])
+#
+#
+# def max_sliding_window(numbers, window):
+#     result = []
+#     for i in range(len(numbers) - window + 1):
+#         result.append(numbers[i])
+#     return result
+#
+# # Given a list of integers and a window size k, return a list of the maximum value in each sliding window.
+# print(max_sliding_window([1], 1))     # → [1]
+# print(max_sliding_window([9,8,7,6,8,4,6], 3))  # → [9,8,7,6,8]
+# print(max_sliding_window([1,1,1,1], 2))  # → [1,1,1]
+
+#
+# def binary_search(number:list, item: int):
+#     low = 0
+#     high = len(number) - 1
+#
+#     while low <= high:
+#         mid = (low + high) // 2
+#         if number[mid] == item:
+#             return mid
+#         elif number[mid] < item:
+#             low = mid+1
+#         else:
+#             high = mid-1
+#     return -1
+#
+# print(binary_search([1,2,3,4,5], 1))   # 0 (first element)
+# print(binary_search([1,2,3,4,5], 5))   # 4 (last element)
+# print(binary_search([1,2,3,4,5], 10))  # -1 (not found)
+# print(binary_search([10,20,30,40,50,60,70], 40))  # 3 (middle)
+# print(binary_search([7], 7))           # 0 (single element)
+# print(binary_search([], 3))            # -1 (empty list)
+
+# Initialize:
+# low = 0
+# high = len(A) - 1
+# While low <= high:
+# Compute middle index:
+# mid = low + (high - low) // 2
+# (avoids overflow vs (low + high) // 2)
+# Compare:
+# If A[mid] == target → return mid
+# If A[mid] < target → search right half:
+# low = mid + 1
+# Else → search left half:
+# high = mid - 1
+# If loop ends → target not found → return -1
 
 
-def max_sliding_window(numbers, window):
-    result = []
-    for i in range(len(numbers) - window + 1):
-        result.append(numbers[i])
-    return result
 
-# Given a list of integers and a window size k, return a list of the maximum value in each sliding window.
-print(max_sliding_window([1], 1))     # → [1]
-print(max_sliding_window([9,8,7,6,8,4,6], 3))  # → [9,8,7,6,8]
-print(max_sliding_window([1,1,1,1], 2))  # → [1,1,1]
+
+def reverse(lst):
+    n = len(lst)
+    for i in range(n//2):
+        lst[i],lst[-1-i] = lst[-1-i], lst[i]
+    print(lst)
+    # print(lst[::-1])
+
+reverse([1, 2, 3, 4])
