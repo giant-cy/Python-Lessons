@@ -1,11 +1,11 @@
 def transpose(input_list):
-    columns = len(input_list)  # number of rows in original = 3
-    rows = len(input_list[0])  # number of columns in original = 2
+    columns = len(input_list)
+    rows = len(input_list[0])
     new_list = []
 
-    for i in range(rows):  # i = 0, 1
+    for i in range(rows):
         new_list.append([])
-        for j in range(columns):  # j = 0, 1, 2
+        for j in range(columns):
             new_list[i].append(input_list[j][i])
 
     print(new_list)
@@ -32,3 +32,18 @@ list_2 = [
 # 	[2, 5, 8]
 # ]
 transpose(list_2)
+
+
+# first list
+# [ output
+# 	[1, 4, 7],
+# 	[2, 5, 8],
+# 	[3, 6, 9]
+# ]
+
+# first column
+# [ output
+# 	[1, 4, 7],
+# 	[2, 5, 8],
+# 	[3, 6, 9]
+# ]
