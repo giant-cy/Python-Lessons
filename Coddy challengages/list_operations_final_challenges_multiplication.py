@@ -3,12 +3,12 @@ def list_multiplication(list1, list2):
     column_list_1 = len(list1[0])
     row_list_2 = len(list2)
     columns_list_2 = len(list2[0])
+    result = []
 
     if column_list_1 != row_list_2:
         print("Matrix multiplication not possible")
-        return
-    # Create result matrix filled with 0
-    result = []
+        return result
+
     for i in range(row_list_1):
         result.append([])
         for j in range(columns_list_2):
