@@ -6,7 +6,7 @@ def list_multiplication(list1, list2):
     result = []
 
     if column_list_1 != row_list_2:
-        print("Matrix multiplication not possible")
+        print("Not the same number of rows and columns")
         return result
 
     for i in range(row_list_1):
